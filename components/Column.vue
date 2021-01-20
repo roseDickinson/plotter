@@ -17,8 +17,7 @@
         :index="index"
         :aesthetic="aesthetic"
         :type="type"
-      >
-      </Option>
+      />
     </v-expansion-panel-content>
   </v-expansion-panel>
 </template>

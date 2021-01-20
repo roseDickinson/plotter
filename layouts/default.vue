@@ -9,12 +9,10 @@
       disable-resize-watcher
       fixed
       right
-      style="background-color: #f4f4f4;"
+      style="background-color: #f4f4f4"
     >
       <div class="pa-4">
-        <h2 class="mb-3">
-          Help
-        </h2>
+        <h2 class="mb-3">Help</h2>
         <p>For technical support please contact the DAFNI team on:</p>
         <p><a href="mailto:support@dafni.ac.uk">support@dafni.ac.uk</a></p>
       </div>
@@ -25,7 +23,7 @@
       app
       clipped-right
       clipped-left
-      style="background-color: #031e2f; border: 0px !important;"
+      style="background-color: #031e2f; border: 0px !important"
     >
       <v-app-bar-nav-icon
         class="ma-0 pa-0"
@@ -50,13 +48,11 @@
         color="#fff"
         @click.stop="drawerRight = !drawerRight"
       >
-        <v-icon :ripple="false" color="#fff">
-          help
-        </v-icon>
+        <v-icon :ripple="false" color="#fff"> help </v-icon>
       </v-btn>
     </v-app-bar>
     <v-content>
-      <v-container fluid style="border: 0px;">
+      <v-container fluid style="border: 0px">
         <nuxt />
       </v-container>
     </v-content>

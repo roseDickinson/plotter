@@ -25,7 +25,7 @@ describe('Columns', () => {
 
   beforeEach(async () => {
     store = await NuxtStore.createStore()
-    let defaultProps = defaultColumn()
+    const defaultProps = defaultColumn()
     defaultProps.type = 'quantitative'
     store.commit('dataset/setColumns', [{ name: 'col1', ...defaultProps }])
     store.commit('dataset/setColumnsInDatafile', [

@@ -7,8 +7,7 @@
           :items="availableModes"
           label="what is your input data?"
           hint="selection will reset geometry data"
-        >
-        </v-select>
+        />
       </v-col>
       <v-col cols="3">
         <v-select
@@ -62,7 +61,7 @@
           v-model="csvId"
           :items="csvProperties"
           label="csv id field"
-        ></v-select>
+        />
       </v-col>
       <v-col cols="3">
         <v-select
@@ -100,7 +99,7 @@
           v-model="geoId"
           :items="geoProperties"
           label="geometry id field"
-        ></v-select>
+        />
       </v-col>
     </v-row>
     <v-row dense>

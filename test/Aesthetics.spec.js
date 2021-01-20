@@ -74,5 +74,4 @@ describe('Aesthetics', () => {
     await Vue.nextTick()
     expect(wrapper.text()).toContain('y2')
   })
-
 })

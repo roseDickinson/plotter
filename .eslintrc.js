@@ -9,12 +9,17 @@ module.exports = {
   },
   extends: [
     '@nuxtjs',
+    'eslint:recommended',
+    'plugin:vue/recommended',
+    'plugin:prettier/recommended',
+    'plugin:prettier/recommended',
+    'eslint-config-prettier',
     'prettier',
     'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
   ],
-  plugins: ['prettier'],
+  plugins: ['vue'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    'no-console': 0,
+  },
 }

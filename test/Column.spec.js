@@ -45,5 +45,4 @@ describe('Column', () => {
   test('columnProperties is correct', () => {
     expect(wrapper.vm.columnProperties).toStrictEqual(columnProperties)
   })
-
 })
