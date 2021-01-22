@@ -1,28 +1,25 @@
 <template>
-  <v-expansion-panel>
-    <v-expansion-panel-header disable-icon-rotate>
-      {{ name }}
-      <template v-slot:actions>
-        <v-btn icon @click="removeColumn">
-          <v-icon>mdi-minus</v-icon>
-        </v-btn>
-        <v-icon>$expand</v-icon>
-      </template>
-    </v-expansion-panel-header>
-    <v-expansion-panel-content>
-      <Option
-        v-for="option in columnProperties"
-        :key="option.name"
-        :option="option"
-        :index="index"
-        :aesthetic="aesthetic"
-        :type="type"
-      />
-    </v-expansion-panel-content>
-  </v-expansion-panel>
+  <v-card outlined elevation="2" width="100%">
+    <v-card-text>
+      <v-row>
+        <v-col style="display: flex; align-items: center" class="py-2 px-3">
+          <span>
+            {{ name }}
+          </span>
+        </v-col>
+        <v-spacer />
+        <v-col style="display: flex; justify-content: flex-end" class="pa-2">
+          <v-btn icon small @click="deleteCol">
+            <v-icon>mdi-close</v-icon>
+          </v-btn>
+        </v-col>
+      </v-row>
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import { columnProperties } from '~/constants/aesthetics'
 
 export default {
@@ -51,12 +48,11 @@ export default {
     },
   },
   methods: {
-    removeColumn() {
-      this.$store.dispatch('removeColumn', [
-        this.type,
-        this.index,
-        this.aesthetic,
-      ])
+    ...mapActions({
+      removeColumn: 'removeColumn',
+    }),
+    deleteCol() {
+      this.removeColumn([this.type, this.index, this.aesthetic])
     },
   },
 }

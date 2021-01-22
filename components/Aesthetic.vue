@@ -19,7 +19,7 @@
         tag="v-expansion-panels"
         :component-data="getComponentData()"
       >
-        <Column
+        <DraggableColumn
           v-for="(column, i) in aesMap"
           :key="column.name"
           :name="column.name"
@@ -37,14 +37,14 @@
 
 <script>
 import draggable from 'vuedraggable'
-import Column from './Column'
+import DraggableColumn from './DraggableColumn'
 import { aesthetics } from '~/constants/aesthetics'
 
 export default {
   name: 'Aesthetic',
   components: {
     draggable,
-    Column,
+    DraggableColumn,
   },
   props: {
     name: {

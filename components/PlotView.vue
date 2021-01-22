@@ -1,5 +1,5 @@
 <template>
-  <v-card class="pa-1">
+  <v-card outlined>
     <v-card-title>
       <v-row no-gutters>
         <v-col cols="2"> Plot </v-col>
@@ -15,7 +15,9 @@
         </v-col>
       </v-row>
     </v-card-title>
-    <VegaEmbed ref="vegaEmbed" :spec="vegaSpec" />
+    <v-card-text>
+      <VegaEmbed ref="vegaEmbed" :spec="vegaSpec" />
+    </v-card-text>
   </v-card>
 </template>
 

@@ -5,27 +5,31 @@
         <Data />
       </v-col>
     </v-row>
-    <v-row class="mt-0 pt-0">
-      <v-col class="ma-0 pa-0" cols="2">
-        <Geometries />
-      </v-col>
-      <v-col class="mt-0 pt-0" cols="3">
-        <Aesthetics />
-      </v-col>
-      <v-col class="mt-0 pt-0" cols="2">
-        <Columns />
-      </v-col>
-      <v-col class="mt-0 pt-0" cols="5">
+    <v-row>
+      <v-col cols="4">
         <v-row>
-          <v-col class="mt-0 pt-0">
-            <PlotView />
+          <v-col cols="12">
+            <Geometries />
+          </v-col>
+          <v-col cols="12">
+            <v-card outlined>
+              <v-card-text class="pa-0">
+                <v-row>
+                  <v-col cols="6" class="pr-0">
+                    <Columns />
+                  </v-col>
+                  <v-col cols="6" class="pl-0">
+                    <Aesthetics />
+                  </v-col>
+                </v-row>
+              </v-card-text>
+            </v-card>
           </v-col>
         </v-row>
-        <v-row>
-          <v-col>
-            <Spec />
-          </v-col>
-        </v-row>
+      </v-col>
+      <v-col cols="8">
+        <PlotView />
+        <!-- <Spec /> -->
       </v-col>
     </v-row>
   </v-container>

@@ -1,47 +1,48 @@
 <template>
-  <v-card class="pa-1 bg-grey">
+  <v-card elevation="0" height="100%" class="bg-grey">
     <v-card-title>
-      <v-row no-gutters>
-        <v-col cols="10"> Aesthetics </v-col>
-        <v-col cols="2">
+      <v-row>
+        <v-col cols="auto" style="display: flex; align-items: center">
           <v-icon color="primary"> mdi-image-filter-vintage </v-icon>
         </v-col>
+        <v-col cols="auto" class="pl-0"> Aesthetics </v-col>
       </v-row>
     </v-card-title>
     <v-card-subtitle>Map columns to visual properies</v-card-subtitle>
-    <v-list class="bg-grey">
-      <Aesthetic
-        v-for="aesthetic in currentAesthetics"
-        :key="aesthetic"
-        :name="aesthetic"
-      />
-    </v-list>
-    <v-overflow-btn
-      v-model="addAestheticSelected"
-      :items="aesthetics"
-      item-value="name"
-      label="Add new aesthetic"
-      flat
-      filled
-      prepend-icon="mdi-plus"
-      @input="addAesthetic"
-    >
-      <template v-slot:item="{ item, attrs, on }">
-        <v-list-item v-bind="attrs" v-on="on">
-          <v-list-item-content>
-            <v-list-item-icon>
-              <v-icon v-text="item.icon" />
-            </v-list-item-icon>
-            <v-list-item-title
-              :id="attrs['aria-labelledby']"
-              v-text="item.name"
-            />
+    <v-card-text>
+      <v-list class="bg-grey">
+        <Aesthetic
+          v-for="aesthetic in currentAesthetics"
+          :key="aesthetic"
+          :name="aesthetic"
+        />
+      </v-list>
+      <v-overflow-btn
+        v-model="addAestheticSelected"
+        :items="aesthetics"
+        item-value="name"
+        label="Add new aesthetic"
+        flat
+        filled
+        @input="addAesthetic"
+      >
+        <template v-slot:item="{ item, attrs, on }">
+          <v-list-item v-bind="attrs" v-on="on">
+            <v-list-item-content>
+              <v-list-item-icon>
+                <v-icon v-text="item.icon" />
+              </v-list-item-icon>
+              <v-list-item-title
+                :id="attrs['aria-labelledby']"
+                v-text="item.name"
+              />
 
-            <v-list-item-subtitle v-text="item.text" />
-          </v-list-item-content>
-        </v-list-item>
-      </template>
-    </v-overflow-btn>
+              <v-list-item-subtitle v-text="item.text" />
+            </v-list-item-content>
+          </v-list-item>
+        </template>
+      </v-overflow-btn>
+    </v-card-text>
   </v-card>
 </template>
 

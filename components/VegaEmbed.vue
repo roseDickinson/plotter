@@ -43,8 +43,10 @@ export default {
       this.draw()
     },
     draw() {
-      this.spec.width = 0.7 * this.width
-      this.spec.height = 0.55 * this.width
+      console.log(this.width)
+      this.spec.width = this.width - 46 // Vega seems to add 46 pixels to the width you specify
+      this.spec.height = 0.6 * this.width
+      console.log(this.spec)
       return embed('#viz', this.spec, { actions: false }).then((res) => {
         res.finalize()
       })
